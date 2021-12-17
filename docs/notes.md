@@ -5,7 +5,7 @@ Game has PlayerService, which has list of Player
 Player has unique id and their own Tiles (get unique view with GET /players/id)
 Game has TileBag. Board with Squares.
 Square(Abstract) has coordinate(final), Tile(nullable)
-- RegularSquare, DoubleLetterSquare, QuadrupleWordSquare...
+- RegularSquare, DoubleLetterSquare, TrippleWordSquare...
 Tile has letter and value
 POST request can return error code for incorrect word
 How to update every view after placing word? Observer? Continuous polling?
@@ -16,7 +16,10 @@ React Native
 
 # Devops
 Github Actions?
+- CI pipeline
+	- Travis?
 - Automatic test
+	- Postman for REST testing
 - Automatic deploy
 Branches
 - Master protected, only PRs
