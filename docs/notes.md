@@ -16,3 +16,5 @@ Branches
 - Master protected, only PRs
 - Dev branch
 - Feature branches
+Github Projects?
+- Scrum
