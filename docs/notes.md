@@ -4,7 +4,7 @@ Spring MVC? \
 Game has PlayerService, which has list of Player \
 Game has TileBag. Board with Squares. \
 Square(Abstract) has coordinate(final), Tile(nullable)
-- RegularSquare, DoubleLetterSquare, TripleWordSquare... \
+- RegularSquare, DoubleLetterSquare, TripleWordSquare... <br />
 Tile has letter and value \
 POST request can return error code for incorrect word \
 How to update every view after placing word? Observer? Continuous polling? Web socket? \
