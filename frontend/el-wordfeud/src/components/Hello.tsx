@@ -19,7 +19,7 @@ export const Hello = () => {
     return hellos.map((hello: any, index: any) => {
         return (
             <div key={index}>
-                <h1>{hello.message}</h1>
+                <h1 className="text-7xl font-bold underline">{hello.message}</h1>
             </div>
         )
     })
