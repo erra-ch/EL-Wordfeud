@@ -1,14 +1,19 @@
 # Backend - Spring Boot
-Maven
-Spring MVC?
-Game has PlayerService, which has list of Player
-Player has unique id and their own Tiles (get unique view with GET /players/id)
-Game has TileBag. Board with Squares.
+Maven \
+Spring MVC? \
+Game has PlayerService, which has list of Player \
+Game has TileBag. Board with Squares. \
 Square(Abstract) has coordinate(final), Tile(nullable)
-- RegularSquare, DoubleLetterSquare, TrippleWordSquare...
-Tile has letter and value
-POST request can return error code for incorrect word
-How to update every view after placing word? Observer? Continuous polling?
+- RegularSquare, DoubleLetterSquare, TripleWordSquare... \
+Tile has letter and value \
+POST request can return error code for incorrect word \
+How to update every view after placing word? Observer? Continuous polling? Web socket? \
+/games/gameid - Can have multiple games \
+/games/gameid/tv - Game data \
+/games/gameid/players/playerid - Unique player data \
+
+
+
 # Frontend - ReactJS
 Typescript
 Redux? React Router?
