@@ -3,6 +3,7 @@ package se.elserver.ELWordfeud.hello;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,5 +18,10 @@ public class HelloController {
     @GetMapping("/hello")
     public List<Hello> hello() {
         return helloService.getHelloList();
+    }
+
+    @GetMapping("/hello/{id}")
+    public String helloId(@PathVariable int id) {
+        return "You have requested hallo with id: " + id;
     }
 }
