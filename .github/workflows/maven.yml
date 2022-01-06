@@ -23,4 +23,5 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
+    working-directory: ./backend/EL-Wordfeud
       run: mvn -B package --file pom.xml
