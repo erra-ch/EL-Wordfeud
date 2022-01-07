@@ -28,6 +28,11 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
 
-    - name: Build and test with Maven
+    - name: Build with Maven
       working-directory: ./backend/EL-Wordfeud
-      run: mvn -B package --file pom.xml
+      run: mvn compile
+      # mvn -B package --file pom.xml
+
+    - name: Test with maven
+      working-directory: ./backend/EL-Wordfeud
+      run: mvn test
