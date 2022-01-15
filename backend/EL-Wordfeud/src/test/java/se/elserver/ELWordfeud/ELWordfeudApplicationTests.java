@@ -32,7 +32,7 @@ public class ELWordfeudApplicationTests {
 	@ParameterizedTest
 	@ValueSource(ints = {2345, 3245, 53, 234})
 	public void getHelloId(int id) throws Exception {
-		String expected = "You have requested hallo with id: " + id;
+		String expected = "You have requested hello with id: " + id;
 
 		mockMvc.perform(MockMvcRequestBuilders.get("/hello/" + id)
 				.accept(MediaType.APPLICATION_JSON))
