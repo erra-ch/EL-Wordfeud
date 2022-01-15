@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -20,8 +22,13 @@ public class HelloController {
         return helloService.getHelloList();
     }
 
+    @GetMapping("hello/database/all")
+    public Iterable<Hello> getHellosFromDatabase() {
+        return helloService.getHellosFromDatabase();
+    }
+
     @GetMapping("/hello/{id}")
     public String helloId(@PathVariable int id) {
-        return "You have requested hallo with id: " + id;
+        return "You have requested hello with id: " + id;
     }
 }
