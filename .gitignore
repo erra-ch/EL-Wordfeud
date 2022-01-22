@@ -77,7 +77,6 @@ sketch
 # Support for Project snippet scope
 !.vscode/*.code-snippets
 
-HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
