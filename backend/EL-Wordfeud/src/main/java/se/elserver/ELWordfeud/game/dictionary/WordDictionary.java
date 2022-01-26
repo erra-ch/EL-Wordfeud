@@ -6,11 +6,7 @@ public abstract class WordDictionary {
     /**
      * Map containing words as keys and definitions as values
      */
-    private Map<String, String> wordMap;
-
-    public WordDictionary(Map<String,String> wordMap) {
-        this.wordMap = wordMap;
-    }
+    protected Map<String, String> wordMap;
 
     public boolean isValidWord(String word) {
         return this.wordMap.containsKey(word);

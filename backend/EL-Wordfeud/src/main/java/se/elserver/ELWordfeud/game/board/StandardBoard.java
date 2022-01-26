@@ -5,8 +5,8 @@ import se.elserver.ELWordfeud.game.square.Square;
 public class StandardBoard extends Board{
 
 
-    public StandardBoard(Square[][] squareMatrix) {
-        super(squareMatrix);
+    public StandardBoard() {
+        super.squareMatrix = new Square[][] {};
     }
 
     @Override
