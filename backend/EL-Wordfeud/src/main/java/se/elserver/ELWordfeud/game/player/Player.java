@@ -4,7 +4,7 @@ import se.elserver.ELWordfeud.game.tile.Tile;
 
 import java.util.List;
 
-public abstract class Player {
+public class Player {
 
     int id;
     String name;
@@ -18,5 +18,9 @@ public abstract class Player {
 
     public List<Tile> getTiles() {
         return this.tileRack.getTiles();
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

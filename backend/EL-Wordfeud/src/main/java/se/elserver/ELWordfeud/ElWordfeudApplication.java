@@ -9,5 +9,4 @@ public class ElWordfeudApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ElWordfeudApplication.class, args);
 	}
-
 }
