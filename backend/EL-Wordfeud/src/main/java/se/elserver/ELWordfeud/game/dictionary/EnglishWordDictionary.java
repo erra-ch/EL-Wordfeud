@@ -14,4 +14,14 @@ public class EnglishWordDictionary extends WordDictionary{
                 // Where should this info be?
         );
     }
+
+    @Override
+    public boolean isValidWord(String word) {
+        return false;
+    }
+
+    @Override
+    public String getDefinition(String word) {
+        return null;
+    }
 }

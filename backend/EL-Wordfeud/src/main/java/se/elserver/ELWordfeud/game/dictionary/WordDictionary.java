@@ -8,11 +8,7 @@ public abstract class WordDictionary {
      */
     protected Map<String, String> wordMap;
 
-    public boolean isValidWord(String word) {
-        return this.wordMap.containsKey(word);
-    }
+    public abstract boolean isValidWord(String word);
 
-    public String getDefinition(String word) {
-        return this.wordMap.get(word);
-    }
+    public abstract String getDefinition(String word);
 }
