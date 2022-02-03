@@ -44,6 +44,7 @@ public class SwedishWordDictionary extends WordDictionary {
             webClient.setCssErrorHandler(new CSSSilencer());
             webClient.setJavaScriptErrorListener(new ScriptErrorSilencer());
         }
+        word = word.toLowerCase();
         try {
         HtmlPage myPage = webClient.getPage("https://svenska.se/tre/?sok=" + word);
         Thread.sleep(2000); // TODO: What is optimal time to wait? Or other solution
@@ -63,6 +64,7 @@ public class SwedishWordDictionary extends WordDictionary {
 
     @Override
     public boolean isValidWord(String word) {
+        word = word.toLowerCase();
         if (!super.wordMap.containsKey(word)) {
             getWord(word);
         }
@@ -76,6 +78,7 @@ public class SwedishWordDictionary extends WordDictionary {
 
     @Override
     public String getDefinition(String word) {
+        word = word.toLowerCase();
         if (!super.wordMap.containsKey(word)) {
             getWord(word);
         }
