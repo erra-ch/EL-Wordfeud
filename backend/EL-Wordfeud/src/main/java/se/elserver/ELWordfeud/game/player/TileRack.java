@@ -3,6 +3,7 @@ package se.elserver.ELWordfeud.game.player;
 import se.elserver.ELWordfeud.game.tile.Tile;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class TileRack {
@@ -18,6 +19,6 @@ public class TileRack {
     }
 
     public void shuffleTiles() {
-        //TODO: Shuffle order in list
+        Collections.shuffle(this.tiles);
     }
 }
