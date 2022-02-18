@@ -7,7 +7,23 @@ public abstract class Board {
 
     protected Square[][] squareMatrix;
 
-    public abstract void generateSquares();
+    protected abstract void generateSquares();
 
-    public abstract void placeTiles(Tile[] tiles, Position[] positions);
+    public void placeTiles(Tile[] tiles, Position[] positions) {
+        if (!isValidPositions(positions)) {
+            throw new IllegalStateException();
+        }
+        for (int i = 0; i < tiles.length; i++) {
+            this.squareMatrix[positions[i].getRow()][positions[i].getCol()].setTile(tiles[i]);
+        }
+    }
+
+    public boolean isValidPositions(Position[] positions) {
+        for (Position position : positions) {
+            if (this.squareMatrix[position.getRow()][position.getCol()].isOccupied()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
