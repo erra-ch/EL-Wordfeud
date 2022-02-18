@@ -51,10 +51,14 @@ public class SwedishWordDictionary extends WordDictionary {
         // convert page to generated HTML and convert to document
         Document doc = Jsoup.parse(myPage.asXml());
         Element saol = doc.getElementById("saol-1").getElementsByClass("cshow").first();
+            System.out.println(saol);
         if (saol.text().contains("Sökningen")) {
             super.wordMap.put(word, "false");
         } else {
-            super.wordMap.put(word,saol.getElementsByClass("syntex").text().replaceAll("\u00AD", ""));
+            StringBuilder sb = new StringBuilder();
+            sb.append(saol.getElementsByClass("def").text().replaceAll("\u00AD", ""));
+            sb.append("\n" + saol.getElementsByClass("syntex").text().replaceAll("\u00AD", ""));
+            super.wordMap.put(word,sb.toString());
         }
 
         } catch (IOException | InterruptedException e) {
@@ -63,7 +67,7 @@ public class SwedishWordDictionary extends WordDictionary {
     }
 
     @Override
-    public boolean isValidWord(String word) {
+    public boolean isValidWord(String word) { //TODO: Move to super?
         word = word.toLowerCase();
         if (!super.wordMap.containsKey(word)) {
             getWord(word);
@@ -77,7 +81,7 @@ public class SwedishWordDictionary extends WordDictionary {
     }
 
     @Override
-    public String getDefinition(String word) {
+    public String getDefinition(String word) { //TODO: Move to super?
         word = word.toLowerCase();
         if (!super.wordMap.containsKey(word)) {
             getWord(word);
