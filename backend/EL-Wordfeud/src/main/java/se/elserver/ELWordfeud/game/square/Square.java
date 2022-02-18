@@ -4,9 +4,28 @@ import se.elserver.ELWordfeud.game.tile.Tile;
 
 public abstract class Square {
 
-    Tile tile;
+    protected Tile tile;
 
-    public Square() {}
+    public void setTile(Tile tile) {
+        if (isOccupied()) {
+            throw new IllegalStateException();
+        }
+        this.tile = tile;
+    }
 
-    public abstract void setTile(Tile tile);
+    public boolean isOccupied() {
+        return this.tile != null;
+    }
+
+    @Override
+    public String toString() {
+        if (this.tile == null) {
+            return "-";
+        }
+        return this.tile.getLetter();
+    }
+
+    // public abstract ? getEffect();
+
+
 }

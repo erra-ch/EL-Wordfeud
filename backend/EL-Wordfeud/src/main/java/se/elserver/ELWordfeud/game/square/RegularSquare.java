@@ -8,8 +8,4 @@ public class RegularSquare extends Square {
 
     }
 
-    @Override
-    public void setTile(Tile tile) {
-        this.tile = tile; //TODO: Prevent multiple changes.
-    }
 }
