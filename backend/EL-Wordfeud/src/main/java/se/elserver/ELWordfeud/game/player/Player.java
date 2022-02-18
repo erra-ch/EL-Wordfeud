@@ -6,9 +6,9 @@ import java.util.List;
 
 public class Player {
 
-    int id;
-    String name;
-    TileRack tileRack;
+    private int id;
+    private String name;
+    private TileRack tileRack;
 
     public Player(int id, String name) {
         this.id = id;
@@ -22,5 +22,9 @@ public class Player {
 
     public String getName() {
         return this.name;
+    }
+
+    public int getId() {
+        return this.id;
     }
 }

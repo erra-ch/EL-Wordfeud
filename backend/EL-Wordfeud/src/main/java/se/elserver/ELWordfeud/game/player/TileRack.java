@@ -11,7 +11,7 @@ public class TileRack {
     List<Tile> tiles;
 
     public TileRack() {
-        this.tiles = new ArrayList<Tile>();
+        this.tiles = new ArrayList<Tile>(7);
     }
 
     public List<Tile> getTiles() {

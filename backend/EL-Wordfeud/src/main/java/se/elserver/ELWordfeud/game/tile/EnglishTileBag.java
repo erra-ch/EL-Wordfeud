@@ -7,6 +7,6 @@ public class EnglishTileBag extends TileBag{
 
     // Initializes a tile bag with (correct amount of) English letters
     public EnglishTileBag() {
-        super.tiles = new ArrayList<Tile>();
+        super(new ArrayList<Tile>());
     }
 }
