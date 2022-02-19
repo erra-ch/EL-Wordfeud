@@ -1,0 +1,2 @@
+How to generate entity from database-schema:
+https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000751864-Generate-Persistence-Mapping-by-Database-Schema-Detail-settings-for-Entity-Class
