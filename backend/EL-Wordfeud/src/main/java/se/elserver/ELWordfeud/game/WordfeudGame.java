@@ -25,7 +25,6 @@ public class WordfeudGame {
         this.players = new HashMap<>();
         this.tileBag = tileBag;
         this.board = board;
-        System.out.println(board);
     }
 
     public Player addPlayer(String name) {
@@ -37,6 +36,10 @@ public class WordfeudGame {
 
     public Player getPlayer(int id) {
         return players.get(id);
+    }
+
+    public List<Player> getPlayers()  {
+        return this.players.values().stream().toList();
     }
 
     public boolean isValidPositions(Position[] positions) {
