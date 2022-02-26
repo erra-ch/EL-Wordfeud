@@ -19,8 +19,27 @@ public abstract class Board {
     }
 
     public boolean isValidPositions(Position[] positions) {
-        for (Position position : positions) {
-            if (this.squareMatrix[position.getRow()][position.getCol()].isOccupied()) {
+        // Assumes front-end will prevent placing Tiles on occupied spaces
+
+        if (isCohesiveRight(positions) || isCohesiveDown(positions)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean isCohesiveRight(Position[] positions) {
+        for (int i = 1; i < positions.length; i++) {
+            if (positions[i-1].getRow() + 1 != positions[i].getRow()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isCohesiveDown(Position[] positions) {
+        for (int i = 1; i < positions.length; i++) {
+            if (positions[i-1].getCol() + 1 != positions[i].getCol()) {
                 return false;
             }
         }
