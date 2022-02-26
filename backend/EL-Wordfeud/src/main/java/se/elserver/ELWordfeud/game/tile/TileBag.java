@@ -1,10 +1,8 @@
 package se.elserver.ELWordfeud.game.tile;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-public abstract class TileBag {
+public abstract class TileBag { //TODO: Refactor: No point in being abstract since languages doesn't change implementation.
 
     protected List<Tile> tiles;
 
@@ -13,7 +11,7 @@ public abstract class TileBag {
     }
 
     public Tile getRandomTile() {
-        return tiles.remove(0); //TODO: Make random
+        return tiles.remove(0); //List is shuffled during creation
     }
 
     public int getSize() {
