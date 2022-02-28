@@ -38,7 +38,9 @@ public class ELWordfeudUnitTests {
         WordfeudGame game  = gameBuilder.getResult();
         game.addPlayer("Erik");
 
-        Assert.assertEquals(game.getPlayer(7).getName(), "Erik");
+        Assert.assertEquals(player.getName(), "Erik");
+        game.addPlayer("Gunnar");
+        Assert.assertEquals(2, game.getPlayers().size());
         //TODO: Assert Board and TileBag type
     }
 
@@ -47,7 +49,7 @@ public class ELWordfeudUnitTests {
         WordDictionary dict = new SwedishWordDictionary();
         Assert.assertFalse(dict.isValidWord("heehaaw"));
         Assert.assertTrue(dict.isValidWord("bra"));
-        Assert.assertEquals(dict.getDefinition("attans"), "attans också, jag glömde nyckeln! ha en attans otur");
+        Assert.assertEquals(dict.getDefinition("attans"), "\nattans också, jag glömde nyckeln! ha en attans otur");
     }
 
     @Test
@@ -82,5 +84,19 @@ public class ELWordfeudUnitTests {
         } finally {
             Assert.assertEquals(!worked, game.isValidPositions(positions));
         }
+    }
+
+    @Test
+    public void testScoreboard() {
+
+        int oldPoints = player.getPoints();
+        int scoreboard = game.getScoreboard().get(player.getName());
+        Assert.assertEquals(oldPoints, scoreboard);
+
+        int oldScoreboard = scoreboard;
+        player.addPoints(13);
+        scoreboard = game.getScoreboard().get(player.getName());
+        Assert.assertEquals(oldPoints + 13, player.getPoints());
+        Assert.assertEquals(oldScoreboard + 13, scoreboard);
     }
 }

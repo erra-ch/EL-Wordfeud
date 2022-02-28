@@ -18,6 +18,7 @@ public class WordfeudGame {
     private Map<Integer, Player> players;
     private TileBag tileBag;
     private Board board;
+    private Map<String, Integer> scoreboard;
     //TODO: Maybe admin player id
 
     public WordfeudGame(WordDictionary dictionary, TileBag tileBag, Board board){
@@ -25,9 +26,11 @@ public class WordfeudGame {
         this.players = new HashMap<>();
         this.tileBag = tileBag;
         this.board = board;
+        this.scoreboard = new HashMap<>();
     }
 
     public Player addPlayer(String name) {
+        // TODO: Make names unique
         int id = new Random().nextInt(); // TODO: Maybe move to Player class and use Spring Data JPA
         players.put(id, new Player(id, name));
         getNewTiles(id);
@@ -40,6 +43,12 @@ public class WordfeudGame {
 
     public List<Player> getPlayers()  {
         return this.players.values().stream().toList();
+    }
+
+    public Map<String, Integer> getScoreboard() {
+        getPlayers().forEach(player -> this.scoreboard.put(player.getName(), player.getPoints()));
+
+        return this.scoreboard;
     }
 
     public boolean isValidPositions(Position[] positions) {
@@ -66,6 +75,8 @@ public class WordfeudGame {
             player.getTiles().remove(tile); // Remove from player's TileRack
             //TODO: Catch exception if tile somehow doesn't belong to player
         }
+
+        getNewTiles(playerID);
 
         this.board.placeTiles(tiles, positions);
         System.out.println(board);
