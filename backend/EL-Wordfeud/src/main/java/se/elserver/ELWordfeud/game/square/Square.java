@@ -25,7 +25,7 @@ public abstract class Square {
         return this.tile.getLetter();
     }
 
-    // public abstract ? getEffect();
+    public abstract String getSpecialEffect();
 
 
 }

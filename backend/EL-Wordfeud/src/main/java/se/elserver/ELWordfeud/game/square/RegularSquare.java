@@ -8,4 +8,8 @@ public class RegularSquare extends Square {
 
     }
 
+    @Override
+    public String getSpecialEffect() {
+        return null;
+    }
 }

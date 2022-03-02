@@ -82,6 +82,20 @@ public class WordfeudGame {
         System.out.println(board);
     }
 
+    public int getPoints(Tile[] tiles, Position[] positions) {
+        // TODO: Calculate points. No need to check if real word or allowed position.
+        //  front-end will not call function if position is illegal
+
+        // Check positions for special effects. Letter-effects can be added right away, save Word-effects for later
+        // How will multiple word play be calculated?
+        for (int i = 0; i < positions.length; i++) {
+            String effect = this.board.getSpecialEffect(positions[i]);
+            // do something with effect and corresponding tile
+        }
+
+        return 0;
+    }
+
     private void getNewTiles(int playerID) {
         Player player = getPlayer(playerID);
         List tileRack = player.getTiles();

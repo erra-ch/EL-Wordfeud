@@ -7,7 +7,7 @@ public class DoubleLetterSquare extends Square {
     public DoubleLetterSquare(){}
 
     @Override
-    public void setTile(Tile tile) {
-
+    public String getSpecialEffect() {
+        return null;
     }
 }

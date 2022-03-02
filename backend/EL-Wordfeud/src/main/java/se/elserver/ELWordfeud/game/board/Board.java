@@ -18,6 +18,10 @@ public abstract class Board {
         }
     }
 
+    public String getSpecialEffect(Position position) {
+        return this.squareMatrix[position.getRow()][position.getCol()].getSpecialEffect();
+    }
+
     public boolean isValidPositions(Position[] positions) {
         // Assumes front-end will prevent placing Tiles on occupied spaces
 
