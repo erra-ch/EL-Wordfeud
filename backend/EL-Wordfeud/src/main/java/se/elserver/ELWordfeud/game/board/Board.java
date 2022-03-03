@@ -49,4 +49,17 @@ public abstract class Board {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int row = 0; row < 15; row++) {
+            for (int col = 0; col < 15; col++) {
+                sb.append(squareMatrix[row][col].toString());
+                sb.append(" ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }
