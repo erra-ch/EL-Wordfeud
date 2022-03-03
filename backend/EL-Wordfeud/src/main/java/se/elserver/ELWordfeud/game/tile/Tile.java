@@ -2,7 +2,7 @@ package se.elserver.ELWordfeud.game.tile;
 
 public abstract class Tile {
 
-    //TODO: Maybe id is needed? How can front-end differentiate between equal tiles?
+    //TODO: id is needed
     private String letter;
     private int value;
 
